@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teen Wolf | Guia Completo</title>
+    <title>Era Mesozoica | A Era dos Dinossauros</title>
 
     <style>
-        /* =========================
+        /* =====================================
            VARIÁVEIS DE CORES
-        ========================== */
+        ====================================== */
 
         :root {
-            --bg: #0b0f14;
-            --bg-secondary: #111820;
-            --card: #18212b;
-            --text: #f4f7fa;
-            --text-secondary: #b9c2cc;
-            --accent: #58c7ff;
-            --accent-hover: #2faee8;
-            --border: #283542;
-            --shadow: rgba(0, 0, 0, 0.35);
+            --fundo: #08110d;
+            --fundo-secundario: #101c16;
+            --card: #16271e;
+            --texto: #f2f7f3;
+            --texto-secundario: #b9c8bf;
+            --verde: #55c878;
+            --verde-hover: #3cab60;
+            --borda: #294334;
+            --sombra: rgba(0, 0, 0, 0.35);
         }
 
-        body.light {
-            --bg: #f3f6f9;
-            --bg-secondary: #ffffff;
+        body.claro {
+            --fundo: #eef5f0;
+            --fundo-secundario: #ffffff;
             --card: #ffffff;
-            --text: #17202a;
-            --text-secondary: #53606d;
-            --accent: #1677b8;
-            --accent-hover: #0e6098;
-            --border: #d8e0e7;
-            --shadow: rgba(0, 0, 0, 0.12);
+            --texto: #17231c;
+            --texto-secundario: #56655c;
+            --verde: #218c48;
+            --verde-hover: #176f38;
+            --borda: #d3e0d7;
+            --sombra: rgba(0, 0, 0, 0.12);
         }
 
-        /* =========================
+        /* =====================================
            RESET
-        ========================== */
+        ====================================== */
 
         * {
             margin: 0;
@@ -48,202 +49,257 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            background: var(--fundo);
+            color: var(--texto);
             line-height: 1.7;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition: 0.3s ease;
         }
 
-        /* =========================
-           HEADER
-        ========================== */
+        /* =====================================
+           HERO
+        ====================================== */
 
         header {
-            background:
-                linear-gradient(rgba(5, 10, 15, 0.85), rgba(5, 10, 15, 0.95)),
-                radial-gradient(circle at center, #18384b, #080b0f 70%);
-
-            min-height: 420px;
+            min-height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+
             padding: 40px 20px;
-            border-bottom: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    rgba(4, 13, 8, 0.72),
+                    rgba(4, 13, 8, 0.92)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #315f3e,
+                    #07100b 70%
+                );
+
+            border-bottom: 1px solid var(--borda);
         }
 
         .hero {
             max-width: 900px;
         }
 
+        .icone-dino {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
         .hero h1 {
             font-size: clamp(3rem, 8vw, 6rem);
-            letter-spacing: 5px;
             text-transform: uppercase;
-            color: #fff;
-            text-shadow: 0 0 25px rgba(88, 199, 255, 0.5);
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 0 0 30px rgba(85, 200, 120, 0.6);
         }
 
         .hero p {
-            color: #d5e2ea;
-            font-size: 1.15rem;
+            color: #dce9df;
+            font-size: 1.2rem;
             margin-top: 15px;
         }
 
-        .hero .wolf {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-
-        /* =========================
+        /* =====================================
            NAVEGAÇÃO
-        ========================== */
+        ====================================== */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
 
             padding: 12px 20px;
-            flex-wrap: wrap;
+
+            background: var(--fundo-secundario);
+            border-bottom: 1px solid var(--borda);
         }
 
         nav a {
-            color: var(--text);
+            color: var(--texto);
             text-decoration: none;
+
             padding: 8px 12px;
             border-radius: 8px;
+
             transition: 0.2s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--verde);
             background: var(--card);
         }
 
-        /* =========================
-           BOTÃO TEMA
-        ========================== */
+        /* =====================================
+           BOTÃO DE TEMA
+        ====================================== */
 
-        #themeButton {
-            border: 1px solid var(--border);
+        #botaoTema {
+            border: 1px solid var(--borda);
             background: var(--card);
-            color: var(--text);
-            padding: 9px 14px;
-            border-radius: 20px;
+            color: var(--texto);
+
+            padding: 9px 15px;
+            border-radius: 25px;
+
             cursor: pointer;
             font-size: 0.95rem;
+
             transition: 0.25s;
         }
 
-        #themeButton:hover {
-            background: var(--accent);
+        #botaoTema:hover {
+            background: var(--verde);
             color: white;
-            border-color: var(--accent);
+            border-color: var(--verde);
             transform: translateY(-2px);
         }
 
-        /* =========================
+        /* =====================================
            CONTEÚDO
-        ========================== */
+        ====================================== */
 
         main {
             max-width: 1150px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 55px 20px;
         }
 
         section {
-            margin-bottom: 70px;
+            margin-bottom: 75px;
             scroll-margin-top: 100px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--accent);
-            border-left: 5px solid var(--accent);
+        .titulo-secao {
+            font-size: 2.1rem;
+            color: var(--verde);
+
+            border-left: 5px solid var(--verde);
             padding-left: 15px;
-        }
 
-        .intro {
-            color: var(--text-secondary);
-            max-width: 900px;
             margin-bottom: 25px;
         }
 
-        /* =========================
+        .introducao {
+            color: var(--texto-secundario);
+            max-width: 950px;
+            margin-bottom: 25px;
+        }
+
+        /* =====================================
            CARDS
-        ========================== */
+        ====================================== */
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
             gap: 20px;
         }
 
         .card {
             background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 22px;
-            box-shadow: 0 8px 25px var(--shadow);
+            border: 1px solid var(--borda);
+
+            border-radius: 15px;
+            padding: 23px;
+
+            box-shadow: 0 8px 25px var(--sombra);
+
             transition: 0.25s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            transform: translateY(-6px);
+            border-color: var(--verde);
         }
 
         .card h3 {
-            color: var(--accent);
-            margin-bottom: 8px;
+            color: var(--verde);
+            margin-bottom: 10px;
         }
 
         .card p {
-            color: var(--text-secondary);
+            color: var(--texto-secundario);
         }
 
-        /* =========================
+        /* =====================================
+           PERÍODOS
+        ====================================== */
+
+        .periodo {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .periodo::before {
+            content: "";
+            position: absolute;
+
+            width: 100%;
+            height: 5px;
+
+            top: 0;
+            left: 0;
+
+            background: var(--verde);
+        }
+
+        .data {
+            display: inline-block;
+
+            margin: 10px 0 12px;
+
+            color: var(--verde);
+            font-weight: bold;
+        }
+
+        /* =====================================
            LISTAS
-        ========================== */
+        ====================================== */
 
-        .list {
+        .lista {
             background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 25px 30px;
+
+            border: 1px solid var(--borda);
+            border-radius: 15px;
+
+            padding: 25px 35px;
         }
 
-        .list li {
-            margin-bottom: 10px;
-            color: var(--text-secondary);
+        .lista li {
+            margin-bottom: 12px;
+            color: var(--texto-secundario);
         }
 
-        .list strong {
-            color: var(--text);
+        .lista strong {
+            color: var(--texto);
         }
 
-        /* =========================
+        /* =====================================
            TABELA
-        ========================== */
+        ====================================== */
 
-        .table-container {
+        .tabela-container {
             overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+
             background: var(--card);
             border-radius: 12px;
             overflow: hidden;
@@ -251,68 +307,108 @@
 
         th,
         td {
-            padding: 14px;
-            border-bottom: 1px solid var(--border);
+            padding: 15px;
+            border-bottom: 1px solid var(--borda);
             text-align: left;
         }
 
         th {
-            background: var(--accent);
+            background: var(--verde);
             color: white;
         }
 
         td {
-            color: var(--text-secondary);
+            color: var(--texto-secundario);
         }
 
-        /* =========================
+        /* =====================================
            DESTAQUE
-        ========================== */
+        ====================================== */
 
-        .highlight {
-            background: linear-gradient(
-                135deg,
-                rgba(88, 199, 255, 0.12),
-                var(--card)
-            );
-
-            border: 1px solid var(--accent);
-            border-radius: 16px;
+        .destaque {
             padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(85, 200, 120, 0.14),
+                    var(--card)
+                );
+
+            border: 1px solid var(--verde);
+            border-radius: 16px;
         }
 
-        .highlight h3 {
-            color: var(--accent);
+        .destaque h3 {
+            color: var(--verde);
             margin-bottom: 10px;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* =====================================
+           LINHA DO TEMPO
+        ====================================== */
+
+        .timeline {
+            border-left: 3px solid var(--verde);
+            padding-left: 25px;
+        }
+
+        .evento {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .evento::before {
+            content: "";
+
+            position: absolute;
+            left: -34px;
+            top: 7px;
+
+            width: 13px;
+            height: 13px;
+
+            background: var(--verde);
+            border-radius: 50%;
+
+            box-shadow: 0 0 12px var(--verde);
+        }
+
+        .evento h3 {
+            color: var(--verde);
+        }
+
+        .evento p {
+            color: var(--texto-secundario);
+        }
+
+        /* =====================================
+           RODAPÉ
+        ====================================== */
 
         footer {
             text-align: center;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
+
             padding: 35px 20px;
-            color: var(--text-secondary);
+
+            background: var(--fundo-secundario);
+            border-top: 1px solid var(--borda);
+
+            color: var(--texto-secundario);
         }
 
         footer strong {
-            color: var(--accent);
+            color: var(--verde);
         }
 
-        /* =========================
+        /* =====================================
            RESPONSIVIDADE
-        ========================== */
+        ====================================== */
 
         @media (max-width: 600px) {
-            nav {
-                gap: 5px;
-            }
 
             nav a {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 padding: 6px 8px;
             }
 
@@ -320,8 +416,12 @@
                 padding: 35px 15px;
             }
 
-            .list {
+            .lista {
                 padding: 20px;
+            }
+
+            .icone-dino {
+                font-size: 60px;
             }
         }
     </style>
@@ -329,310 +429,497 @@
 
 <body>
 
-    <!-- =========================
+    <!-- =====================================
          CABEÇALHO
-    ========================== -->
+    ====================================== -->
 
     <header>
-        <div class="hero">
-            <div class="wolf">🐺</div>
 
-            <h1>Teen Wolf</h1>
+        <div class="hero">
+
+            <div class="icone-dino">🦖</div>
+
+            <h1>Era Mesozoica</h1>
 
             <p>
-                Um guia completo sobre a série, seus personagens,
-                criaturas, temporadas e universo sobrenatural.
+                A fascinante história da chamada
+                "Era dos Répteis", marcada pelos dinossauros,
+                grandes mudanças climáticas e importantes
+                transformações na vida da Terra.
             </p>
+
         </div>
+
     </header>
 
-    <!-- =========================
+
+    <!-- =====================================
          MENU
-    ========================== -->
+    ====================================== -->
 
     <nav>
+
         <a href="#sobre">Sobre</a>
-        <a href="#personagens">Personagens</a>
-        <a href="#criaturas">Criaturas</a>
-        <a href="#temporadas">Temporadas</a>
-        <a href="#packs">Alcateias</a>
+        <a href="#periodos">Períodos</a>
+        <a href="#dinossauros">Dinossauros</a>
+        <a href="#vida">Vida</a>
+        <a href="#clima">Clima</a>
+        <a href="#extincao">Extinções</a>
         <a href="#curiosidades">Curiosidades</a>
 
-        <button id="themeButton" onclick="toggleTheme()">
+        <button id="botaoTema">
             ☀️ Modo claro
         </button>
+
     </nav>
+
 
     <main>
 
-        <!-- =========================
+        <!-- =====================================
              SOBRE
-        ========================== -->
+        ====================================== -->
 
         <section id="sobre">
 
-            <h2 class="section-title">Sobre Teen Wolf</h2>
+            <h2 class="titulo-secao">
+                O que foi a Era Mesozoica?
+            </h2>
 
-            <p class="intro">
-                <strong>Teen Wolf</strong> é uma série americana de drama,
-                fantasia, ação e terror sobrenatural. A história acompanha
-                adolescentes que precisam lidar simultaneamente com a vida
-                escolar, relacionamentos, amizades e um mundo repleto de
-                criaturas sobrenaturais.
+            <p class="introducao">
+                A Era Mesozoica foi uma grande divisão da escala
+                de tempo geológico. Ela começou aproximadamente
+                há 252 milhões de anos e terminou há cerca de
+                66 milhões de anos.
+            </p>
+
+            <p class="introducao">
+                Durante esse enorme intervalo de tempo,
+                os continentes mudaram de posição, os oceanos
+                se transformaram e diversos grupos de animais
+                e plantas evoluíram. Os dinossauros dominaram
+                muitos ambientes terrestres durante grande parte
+                desse período.
             </p>
 
             <div class="grid">
 
                 <div class="card">
-                    <h3>📺 Série</h3>
+                    <h3>⏳ Duração</h3>
+
                     <p>
-                        A série foi desenvolvida para a televisão por
-                        Jeff Davis e é inspirada no filme de mesmo nome
-                        lançado em 1985.
+                        Aproximadamente 186 milhões de anos,
+                        do final do Permiano até o final do Cretáceo.
                     </p>
                 </div>
 
                 <div class="card">
-                    <h3>🎭 Gêneros</h3>
+                    <h3>🦖 Dinossauros</h3>
+
                     <p>
-                        Drama adolescente, fantasia, ação, suspense,
-                        romance e terror sobrenatural.
+                        Surgiram durante o Triássico e passaram
+                        por uma enorme diversificação durante
+                        o Jurássico e o Cretáceo.
                     </p>
                 </div>
 
                 <div class="card">
-                    <h3>🐺 Protagonista</h3>
+                    <h3>🌎 Continentes</h3>
+
                     <p>
-                        Scott McCall começa sua jornada como um adolescente
-                        comum e acaba se tornando um lobisomem.
+                        O supercontinente Pangeia começou a se
+                        fragmentar, dando origem gradualmente
+                        a configurações continentais mais próximas
+                        das atuais.
                     </p>
                 </div>
 
                 <div class="card">
-                    <h3>🌙 Universo</h3>
+                    <h3>🌿 Natureza</h3>
+
                     <p>
-                        O universo apresenta lobisomens, caçadores,
-                        banshees, kitsunes, quimeras e diversas outras
-                        criaturas.
+                        Florestas, coníferas, samambaias e,
+                        posteriormente, plantas com flores
+                        ocuparam diferentes ambientes.
                     </p>
                 </div>
 
             </div>
+
         </section>
 
-        <!-- =========================
-             PERSONAGENS
-        ========================== -->
 
-        <section id="personagens">
+        <!-- =====================================
+             PERÍODOS
+        ====================================== -->
 
-            <h2 class="section-title">Personagens principais</h2>
+        <section id="periodos">
+
+            <h2 class="titulo-secao">
+                Os três períodos
+            </h2>
+
+            <p class="introducao">
+                A Era Mesozoica é dividida em três períodos
+                principais: Triássico, Jurássico e Cretáceo.
+            </p>
+
+            <div class="grid">
+
+                <div class="card periodo">
+
+                    <h3>🦎 Triássico</h3>
+
+                    <span class="data">
+                        252 – 201 milhões de anos atrás
+                    </span>
+
+                    <p>
+                        Foi o primeiro período da Era Mesozoica.
+                        Os primeiros dinossauros apareceram
+                        durante esse período, assim como os
+                        primeiros mamíferos conhecidos.
+                    </p>
+
+                </div>
+
+
+                <div class="card periodo">
+
+                    <h3>🦕 Jurássico</h3>
+
+                    <span class="data">
+                        201 – 145 milhões de anos atrás
+                    </span>
+
+                    <p>
+                        Os dinossauros tornaram-se extremamente
+                        diversificados. Grandes saurópodes,
+                        terópodes e outros grupos ocuparam
+                        diferentes ecossistemas.
+                    </p>
+
+                </div>
+
+
+                <div class="card periodo">
+
+                    <h3>🌋 Cretáceo</h3>
+
+                    <span class="data">
+                        145 – 66 milhões de anos atrás
+                    </span>
+
+                    <p>
+                        Foi o último período do Mesozoico.
+                        Surgiram e se diversificaram muitos
+                        grupos de plantas com flores e dinossauros.
+                        O período terminou com uma grande extinção.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DINOSSAUROS
+        ====================================== -->
+
+        <section id="dinossauros">
+
+            <h2 class="titulo-secao">
+                Dinossauros
+            </h2>
+
+            <p class="introducao">
+                Os dinossauros foram um dos grupos de vertebrados
+                mais importantes dos ecossistemas terrestres
+                mesozoicos. Eles apresentavam enorme diversidade
+                de tamanhos, formas e hábitos.
+            </p>
 
             <div class="grid">
 
                 <div class="card">
-                    <h3>Scott McCall</h3>
+                    <h3>🦖 Tyrannosaurus rex</h3>
+
                     <p>
-                        Protagonista da série. Após ser mordido por um
-                        lobisomem, Scott começa a descobrir seus poderes
-                        e tenta usá-los para proteger as pessoas que ama.
+                        Grande terópode predador do final do
+                        Cretáceo, conhecido por sua enorme cabeça
+                        e poderosa mordida.
                     </p>
                 </div>
 
+
                 <div class="card">
-                    <h3>Stiles Stilinski</h3>
+                    <h3>🦕 Brachiosaurus</h3>
+
                     <p>
-                        Melhor amigo de Scott. Inteligente, sarcástico,
-                        extremamente leal e frequentemente responsável
-                        por conectar pistas importantes.
+                        Um grande saurópode de pescoço longo.
+                        Seu corpo era adaptado a uma alimentação
+                        baseada principalmente em vegetação.
                     </p>
                 </div>
 
+
                 <div class="card">
-                    <h3>Derek Hale</h3>
+                    <h3>🦖 Velociraptor</h3>
+
                     <p>
-                        Um lobisomem da família Hale que inicialmente
-                        possui uma personalidade mais fechada e ajuda
-                        Scott a compreender o mundo sobrenatural.
+                        Pequeno terópode predador. Era muito menor
+                        do que a versão popularizada em filmes.
                     </p>
                 </div>
 
+
                 <div class="card">
-                    <h3>Allison Argent</h3>
+                    <h3>🛡️ Triceratops</h3>
+
                     <p>
-                        Membro de uma tradicional família de caçadores.
-                        Sua relação com Scott é um dos principais
-                        elementos das primeiras temporadas.
+                        Dinossauro herbívoro com três chifres
+                        e uma grande estrutura óssea na parte
+                        posterior do crânio.
                     </p>
                 </div>
 
+
                 <div class="card">
-                    <h3>Lydia Martin</h3>
+                    <h3>🦖 Spinosaurus</h3>
+
                     <p>
-                        Inicialmente conhecida por sua popularidade e
-                        inteligência, Lydia posteriormente descobre
-                        habilidades sobrenaturais relacionadas às banshees.
+                        Grande espinossaurídeo conhecido por sua
+                        enorme estrutura semelhante a uma vela
+                        nas costas e por adaptações relacionadas
+                        a ambientes aquáticos.
                     </p>
                 </div>
 
-                <div class="card">
-                    <h3>Malia Tate</h3>
-                    <p>
-                        Uma personagem ligada ao sobrenatural desde a
-                        infância, com uma personalidade direta, forte
-                        e independente.
-                    </p>
-                </div>
 
                 <div class="card">
-                    <h3>Isaac Lahey</h3>
-                    <p>
-                        Um lobisomem que passa a fazer parte do círculo
-                        de Scott e enfrenta dificuldades relacionadas
-                        à sua vida familiar.
-                    </p>
-                </div>
+                    <h3>🦕 Diplodocus</h3>
 
-                <div class="card">
-                    <h3>Coach Finstock</h3>
                     <p>
-                        Professor e treinador conhecido por seu humor
-                        exagerado, frases marcantes e personalidade
-                        imprevisível.
+                        Saurópode de corpo muito longo,
+                        conhecido por sua cauda e pescoço
+                        extremamente compridos.
                     </p>
                 </div>
 
             </div>
+
         </section>
 
-        <!-- =========================
-             CRIATURAS
-        ========================== -->
 
-        <section id="criaturas">
+        <!-- =====================================
+             VIDA
+        ====================================== -->
 
-            <h2 class="section-title">Criaturas sobrenaturais</h2>
+        <section id="vida">
+
+            <h2 class="titulo-secao">
+                A vida durante o Mesozoico
+            </h2>
 
             <div class="grid">
 
                 <div class="card">
-                    <h3>🐺 Lobisomens</h3>
+
+                    <h3>🌿 Plantas</h3>
+
                     <p>
-                        Possuem força, velocidade, sentidos e capacidade
-                        de cura superiores aos humanos.
+                        Coníferas, samambaias e outras plantas
+                        dominaram diversos ambientes. No Cretáceo,
+                        as angiospermas, ou plantas com flores,
+                        tornaram-se cada vez mais importantes.
                     </p>
+
                 </div>
 
-                <div class="card">
-                    <h3>🦊 Kitsunes</h3>
-                    <p>
-                        Criaturas associadas à mitologia japonesa,
-                        apresentadas através de diferentes tipos e
-                        habilidades.
-                    </p>
-                </div>
 
                 <div class="card">
-                    <h3>👻 Banshees</h3>
+
+                    <h3>🐊 Répteis</h3>
+
                     <p>
-                        Criaturas sobrenaturais relacionadas à morte,
-                        capazes de perceber e emitir determinados sinais
-                        ligados às pessoas que morreram.
+                        Além dos dinossauros terrestres, diferentes
+                        grupos de répteis ocuparam ambientes marinhos
+                        e de água doce.
                     </p>
+
                 </div>
 
-                <div class="card">
-                    <h3>🦂 Kanima</h3>
-                    <p>
-                        Uma criatura com características reptilianas
-                        que aparece durante um dos grandes conflitos
-                        da série.
-                    </p>
-                </div>
 
                 <div class="card">
-                    <h3>🐺 Hellhound</h3>
+
+                    <h3>🪽 Pterossauros</h3>
+
                     <p>
-                        Uma entidade sobrenatural associada ao fogo,
-                        à morte e ao mundo entre a vida e a morte.
+                        Eram répteis voadores que viveram durante
+                        o Mesozoico. Apesar de viverem na mesma época
+                        dos dinossauros, não eram dinossauros.
                     </p>
+
                 </div>
 
+
                 <div class="card">
-                    <h3>🧬 Quimeras</h3>
+
+                    <h3>🐋 Répteis marinhos</h3>
+
                     <p>
-                        Indivíduos modificados artificialmente por
-                        experimentos sobrenaturais, apresentando
-                        diferentes características de criaturas.
+                        Ictiossauros, plesiossauros e mosassauros
+                        ocuparam diferentes nichos nos oceanos
+                        durante partes do Mesozoico.
                     </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>🐭 Primeiros mamíferos</h3>
+
+                    <p>
+                        Os primeiros mamíferos apareceram no
+                        Triássico e permaneceram geralmente pequenos
+                        durante boa parte do Mesozoico.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>🪶 Aves</h3>
+
+                    <p>
+                        As aves surgiram a partir de dinossauros
+                        terópodes e passaram por uma importante
+                        diversificação durante o Mesozoico.
+                    </p>
+
                 </div>
 
             </div>
+
         </section>
 
-        <!-- =========================
-             TEMPORADAS
-        ========================== -->
 
-        <section id="temporadas">
+        <!-- =====================================
+             CLIMA
+        ====================================== -->
 
-            <h2 class="section-title">Temporadas</h2>
+        <section id="clima">
 
-            <div class="table-container">
+            <h2 class="titulo-secao">
+                Clima e ambiente
+            </h2>
+
+            <div class="destaque">
+
+                <h3>🌡️ Um mundo geralmente mais quente</h3>
+
+                <p>
+                    O clima do Mesozoico não foi igual durante
+                    toda a sua duração. Porém, em grande parte
+                    desse intervalo, a Terra apresentava condições
+                    mais quentes do que as atuais, com diferenças
+                    regionais e mudanças ao longo do tempo.
+                </p>
+
+                <br>
+
+                <h3>🌊 Nível dos mares</h3>
+
+                <p>
+                    Durante partes do Mesozoico, os níveis dos mares
+                    eram elevados, permitindo a existência de mares
+                    rasos que cobriam áreas que hoje são continentes.
+                </p>
+
+                <br>
+
+                <h3>🌋 Vulcanismo</h3>
+
+                <p>
+                    A atividade vulcânica foi importante em vários
+                    momentos, especialmente durante processos ligados
+                    à fragmentação dos continentes e à abertura
+                    de novos oceanos.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TABELA
+        ====================================== -->
+
+        <section>
+
+            <h2 class="titulo-secao">
+                Resumo dos períodos
+            </h2>
+
+            <div class="tabela-container">
 
                 <table>
 
                     <thead>
+
                         <tr>
-                            <th>Temporada</th>
-                            <th>Foco principal</th>
+                            <th>Período</th>
+                            <th>Milhões de anos atrás</th>
+                            <th>Principais acontecimentos</th>
                         </tr>
+
                     </thead>
 
                     <tbody>
 
                         <tr>
-                            <td>1ª</td>
+                            <td>Triássico</td>
+
                             <td>
-                                A transformação de Scott e a descoberta
-                                do mundo sobrenatural.
+                                252 – 201
+                            </td>
+
+                            <td>
+                                Surgimento dos primeiros dinossauros
+                                e primeiros mamíferos.
                             </td>
                         </tr>
 
+
                         <tr>
-                            <td>2ª</td>
+                            <td>Jurássico</td>
+
                             <td>
-                                O mistério envolvendo o Kanima e novos
-                                conflitos entre humanos e sobrenaturais.
+                                201 – 145
+                            </td>
+
+                            <td>
+                                Grande diversificação dos dinossauros
+                                e fragmentação progressiva da Pangeia.
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>3ª</td>
-                            <td>
-                                Os Alpha Pack e posteriormente o Nogitsune.
-                            </td>
-                        </tr>
 
                         <tr>
-                            <td>4ª</td>
-                            <td>
-                                O Deadpool e a chegada de novas ameaças.
-                            </td>
-                        </tr>
+                            <td>Cretáceo</td>
 
-                        <tr>
-                            <td>5ª</td>
                             <td>
-                                Os Dread Doctors e a criação das Quimeras.
+                                145 – 66
                             </td>
-                        </tr>
 
-                        <tr>
-                            <td>6ª</td>
                             <td>
-                                Os Ghost Riders, a Wild Hunt e a ameaça
-                                final enfrentada pela equipe.
+                                Diversificação das plantas com flores
+                                e dos dinossauros.
                             </td>
                         </tr>
 
@@ -641,172 +928,1054 @@
                 </table>
 
             </div>
+
         </section>
 
-        <!-- =========================
-             ALCATEIAS
-        ========================== -->
 
-        <section id="packs">
+        <!-- =====================================
+             EXTINÇÕES
+        ====================================== -->
 
-            <h2 class="section-title">Alcateias e grupos</h2>
+        <section id="extincao">
+
+            <h2 class="titulo-secao">
+                Extinções em massa
+            </h2>
 
             <div class="grid">
 
                 <div class="card">
-                    <h3>Alcateia de Scott</h3>
+
+                    <h3>☠️ Final do Triássico</h3>
+
                     <p>
-                        Grupo formado por Scott e seus amigos e aliados,
-                        que trabalham juntos para enfrentar ameaças
-                        sobrenaturais.
+                        Uma grande extinção ocorreu há aproximadamente
+                        201 milhões de anos. Ela alterou profundamente
+                        os ecossistemas e abriu espaço para mudanças
+                        importantes na fauna do Jurássico.
                     </p>
+
                 </div>
 
-                <div class="card">
-                    <h3>Família Hale</h3>
-                    <p>
-                        Uma das famílias de lobisomens mais importantes
-                        da história, tendo grande influência nos eventos
-                        de Beacon Hills.
-                    </p>
-                </div>
 
                 <div class="card">
-                    <h3>Caçadores Argent</h3>
-                    <p>
-                        Uma família tradicional de caçadores que possui
-                        uma longa história de combate contra criaturas
-                        sobrenaturais.
-                    </p>
-                </div>
 
-                <div class="card">
-                    <h3>Alpha Pack</h3>
+                    <h3>☄️ Final do Cretáceo</h3>
+
                     <p>
-                        Um grupo de lobisomens alfas que surge como uma
-                        grande ameaça durante a terceira temporada.
+                        Há aproximadamente 66 milhões de anos ocorreu
+                        uma das extinções mais conhecidas da história
+                        da Terra. O evento levou à extinção dos
+                        dinossauros não avianos.
                     </p>
+
                 </div>
 
             </div>
+
+
+            <br>
+
+
+            <div class="destaque">
+
+                <h3>☄️ O impacto de Chicxulub</h3>
+
+                <p>
+                    A principal hipótese científica para a extinção
+                    do final do Cretáceo envolve o impacto de um
+                    grande asteroide na região da atual Península
+                    de Yucatán, no México. O impacto desencadeou
+                    mudanças ambientais globais que contribuíram
+                    para a crise biológica.
+                </p>
+
+            </div>
+
         </section>
 
-        <!-- =========================
-             TEMAS
-        ========================== -->
+
+        <!-- =====================================
+             LINHA DO TEMPO
+        ====================================== -->
 
         <section>
 
-            <h2 class="section-title">Temas da série</h2>
+            <h2 class="titulo-secao">
+                Linha do tempo
+            </h2>
 
-            <div class="highlight">
+            <div class="timeline">
 
-                <h3>Amizade</h3>
-                <p>
-                    A amizade é um dos elementos centrais da história.
-                    Scott, Stiles, Lydia e seus aliados frequentemente
-                    enfrentam perigos juntos.
-                </p>
+                <div class="evento">
 
-                <br>
+                    <h3>252 milhões de anos</h3>
 
-                <h3>Família</h3>
-                <p>
-                    As relações familiares têm papel importante,
-                    especialmente nas famílias Hale, Argent e Stilinski.
-                </p>
+                    <p>
+                        Início da Era Mesozoica após a grande
+                        extinção do final do Permiano.
+                    </p>
 
-                <br>
+                </div>
 
-                <h3>Escolhas e responsabilidade</h3>
-                <p>
-                    Muitos personagens precisam decidir como usar seus
-                    poderes e até onde estão dispostos a ir para proteger
-                    outras pessoas.
-                </p>
+
+                <div class="evento">
+
+                    <h3>Triássico</h3>
+
+                    <p>
+                        Surgem os primeiros dinossauros
+                        e os primeiros mamíferos.
+                    </p>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <h3>Jurássico</h3>
+
+                    <p>
+                        Grandes dinossauros tornam-se abundantes
+                        em diversos ecossistemas terrestres.
+                    </p>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <h3>Cretáceo</h3>
+
+                    <p>
+                        Plantas com flores se diversificam
+                        e muitos grupos de dinossauros atingem
+                        grande diversidade.
+                    </p>
+
+                </div>
+
+
+                <div class="evento">
+
+                    <h3>66 milhões de anos</h3>
+
+                    <p>
+                        Ocorre a extinção do final do Cretáceo.
+                        Os dinossauros não avianos desaparecem,
+                        enquanto as aves sobrevivem.
+                    </p>
+
+                </div>
 
             </div>
+
         </section>
 
-        <!-- =========================
+
+        <!-- =====================================
              CURIOSIDADES
-        ========================== -->
+        ====================================== -->
 
         <section id="curiosidades">
 
-            <h2 class="section-title">Curiosidades</h2>
+            <h2 class="titulo-secao">
+                Curiosidades
+            </h2>
 
-            <ul class="list">
+            <ul class="lista">
 
                 <li>
-                    <strong>Beacon Hills:</strong>
-                    a cidade fictícia serve como principal cenário
-                    para os acontecimentos sobrenaturais.
+                    <strong>🦖 Dinossauros e aves:</strong>
+                    as aves são consideradas dinossauros avianos
+                    e representam a linhagem de dinossauros que
+                    sobreviveu até os dias atuais.
                 </li>
 
                 <li>
-                    <strong>Mitologias:</strong>
-                    a série utiliza elementos de diferentes tradições
-                    mitológicas e folclóricas.
+                    <strong>🌎 Pangeia:</strong>
+                    durante o início do Mesozoico, grande parte
+                    dos continentes estava reunida no supercontinente
+                    Pangeia.
                 </li>
 
                 <li>
-                    <strong>Scott:</strong>
-                    sua evolução é um dos principais arcos narrativos
-                    de toda a série.
+                    <strong>🪽 Pterossauros:</strong>
+                    eram répteis voadores, não dinossauros.
                 </li>
 
                 <li>
-                    <strong>Stiles:</strong>
-                    apesar de não possuir inicialmente poderes
-                    sobrenaturais, ele é fundamental para o grupo.
+                    <strong>🐊 Crocodilomorfos:</strong>
+                    parentes antigos dos crocodilos modernos
+                    também existiam e apresentavam uma diversidade
+                    muito maior do que as espécies atuais.
                 </li>
 
                 <li>
-                    <strong>Famílias:</strong>
-                    conflitos familiares aparecem constantemente
-                    ao longo da história.
+                    <strong>🌸 Plantas com flores:</strong>
+                    as angiospermas apareceram no Cretáceo
+                    e posteriormente tornaram-se extremamente
+                    importantes nos ecossistemas terrestres.
+                </li>
+
+                <li>
+                    <strong>☄️ Extinção:</strong>
+                    nem todos os dinossauros foram extintos no
+                    final do Cretáceo. As aves sobreviveram.
                 </li>
 
             </ul>
 
         </section>
 
+
+        <!-- =====================================
+             CONCLUSÃO
+        ====================================== -->
+
+        <section>
+
+            <h2 class="titulo-secao">
+                Conclusão
+            </h2>
+
+            <div class="destaque">
+
+                <h3>🌎 Uma das eras mais importantes da história da Terra</h3>
+
+                <p>
+                    A Era Mesozoica foi um período de enormes
+                    transformações geológicas e biológicas.
+                    Durante seus aproximadamente 186 milhões
+                    de anos, os dinossauros evoluíram e ocuparam
+                    diversos ambientes, os continentes se separaram
+                    e novos grupos de organismos surgiram e se
+                    diversificaram.
+                </p>
+
+                <br>
+
+                <p>
+                    O fim do Mesozoico não representou o fim de
+                    toda a linhagem dos dinossauros: as aves
+                    sobreviveram e continuam presentes atualmente.
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <!-- =========================
+
+    <!-- =====================================
          RODAPÉ
-    ========================== -->
+    ====================================== -->
 
     <footer>
 
         <p>
+            🦖 <strong>Era Mesozoica</strong> — Página educativa
+            sobre a história da vida na Terra.
+        </p>
+
+        <p>
+            Conteúdo criado para fins educacionais.
         </p>
 
     </footer>
 
-    <!-- =========================
+
+    <!-- =====================================
          JAVASCRIPT
-    ========================== -->
+         MODO CLARO / ESCURO
+    ====================================== -->
 
     <script>
 
-        const body = document.body;
-        const themeButton = document.getElementById("themeButton");
+        const botaoTema = document.getElementById("botaoTema");
 
-        function toggleTheme() {
+        botaoTema.addEventListener("click", function () {
 
-            body.classList.toggle("light");
+            document.body.classList.toggle("claro");
 
-            if (body.classList.contains("light")) {
-                themeButton.innerHTML = "🌙 Modo escuro";
+            if (document.body.classList.contains("claro")) {
+
+                botaoTema.textContent = "🌙 Modo escuro";
+
             } else {
-                themeButton.innerHTML = "☀️ Modo claro";
+
+                botaoTema.textContent = "☀️ Modo claro";
+
             }
 
-        }
+        });
 
     </script>
 
 </body>
+
 </html>
+
+
+        <!-- =====================================
+             FÓSSEIS
+        ====================================== -->
+
+        <section id="fosseis">
+
+            <h2 class="titulo-secao">
+                Fósseis e descobertas
+            </h2>
+
+            <p class="introducao">
+                Os fósseis são uma das principais formas de estudar
+                a vida durante a Era Mesozoica. Ossos, dentes, pegadas,
+                ovos, ninhos e até impressões de pele e penas podem
+                fornecer informações sobre os organismos que viveram
+                milhões de anos atrás.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🦴 Ossos fossilizados</h3>
+
+                    <p>
+                        Permitem estudar o tamanho, a anatomia e,
+                        em alguns casos, aspectos do crescimento
+                        dos animais.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>👣 Pegadas</h3>
+
+                    <p>
+                        Pegadas fossilizadas, chamadas icnofósseis,
+                        podem revelar informações sobre locomoção,
+                        comportamento e ambiente.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🥚 Ovos e ninhos</h3>
+
+                    <p>
+                        Fósseis de ovos e ninhos ajudam os cientistas
+                        a estudar a reprodução e o comportamento
+                        parental de alguns dinossauros.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🪶 Impressões</h3>
+
+                    <p>
+                        Em condições excepcionais, fósseis podem
+                        preservar impressões de penas, pele e outras
+                        estruturas delicadas.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             EVOLUÇÃO
+        ====================================== -->
+
+        <section id="evolucao">
+
+            <h2 class="titulo-secao">
+                Evolução durante o Mesozoico
+            </h2>
+
+            <div class="destaque">
+
+                <h3>🧬 Uma era de grande diversificação</h3>
+
+                <p>
+                    A Era Mesozoica foi marcada por importantes
+                    processos evolutivos. Diversos grupos de animais
+                    surgiram, desapareceram ou passaram por grandes
+                    mudanças ao longo de milhões de anos.
+                </p>
+
+                <br>
+
+                <p>
+                    Os dinossauros, por exemplo, começaram como um
+                    grupo relativamente pequeno no Triássico e
+                    posteriormente se diversificaram em inúmeras
+                    linhagens.
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🦖 Terópodes</h3>
+
+                    <p>
+                        Grupo que inclui muitos dinossauros carnívoros
+                        e também a linhagem que originou as aves.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🦕 Saurópodes</h3>
+
+                    <p>
+                        Dinossauros herbívoros caracterizados por
+                        pescoços e caudas geralmente muito longos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🛡️ Ornitísquios</h3>
+
+                    <p>
+                        Diversos dinossauros herbívoros pertenciam
+                        a grupos como ceratopsianos, hadrossauros
+                        e anquilossauros.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🐦 Aves primitivas</h3>
+
+                    <p>
+                        Durante o Mesozoico surgiram diferentes
+                        aves primitivas, descendentes de dinossauros
+                        terópodes.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PANGEIA
+        ====================================== -->
+
+        <section id="pangeia">
+
+            <h2 class="titulo-secao">
+                Pangeia e os continentes
+            </h2>
+
+            <p class="introducao">
+                No início da Era Mesozoica, grande parte das terras
+                emersas estava reunida no supercontinente Pangeia.
+                Ao longo do tempo, movimentos das placas tectônicas
+                fizeram com que a Pangeia se fragmentasse.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>🌎 Pangeia</h3>
+
+                    <p>
+                        Um enorme supercontinente que reunia grande
+                        parte das terras emersas durante o final do
+                        Paleozoico e início do Mesozoico.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🌊 Separação</h3>
+
+                    <p>
+                        A fragmentação da Pangeia contribuiu para
+                        a formação gradual dos continentes e oceanos
+                        que conhecemos atualmente.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🌋 Placas tectônicas</h3>
+
+                    <p>
+                        O movimento das placas tectônicas modificou
+                        a posição dos continentes, os oceanos e
+                        diversos ambientes terrestres.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             OCEANOS
+        ====================================== -->
+
+        <section id="oceanos">
+
+            <h2 class="titulo-secao">
+                Os oceanos do Mesozoico
+            </h2>
+
+            <p class="introducao">
+                Os mares mesozoicos eram habitados por uma enorme
+                variedade de organismos. Entre eles estavam répteis
+                marinhos, peixes, moluscos e diversos invertebrados.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>🦎 Mosassauros</h3>
+
+                    <p>
+                        Grandes répteis marinhos que se tornaram
+                        importantes predadores durante o Cretáceo.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🐬 Ictiossauros</h3>
+
+                    <p>
+                        Répteis marinhos com aparência semelhante
+                        à de peixes ou golfinhos, especialmente
+                        diversificados no início e meio do Mesozoico.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🌊 Plesiossauros</h3>
+
+                    <p>
+                        Répteis marinhos que apresentavam diferentes
+                        formas corporais, incluindo espécies de
+                        pescoço extremamente longo.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🦑 Amonites</h3>
+
+                    <p>
+                        Moluscos marinhos com conchas espiraladas,
+                        muito importantes no registro fóssil.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             VULCANISMO
+        ====================================== -->
+
+        <section id="vulcanismo">
+
+            <h2 class="titulo-secao">
+                Vulcanismo
+            </h2>
+
+            <div class="destaque">
+
+                <h3>🌋 Atividade vulcânica</h3>
+
+                <p>
+                    O vulcanismo foi uma característica importante
+                    em diferentes momentos da história mesozoica.
+                    Grandes episódios de atividade vulcânica ocorreram
+                    associados a processos tectônicos e à fragmentação
+                    dos continentes.
+                </p>
+
+                <br>
+
+                <p>
+                    Grandes erupções podem liberar gases e partículas
+                    para a atmosfera e provocar alterações ambientais,
+                    embora os efeitos dependam da intensidade,
+                    duração e localização do evento.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CADEIA ALIMENTAR
+        ====================================== -->
+
+        <section id="cadeia">
+
+            <h2 class="titulo-secao">
+                Cadeias alimentares
+            </h2>
+
+            <p class="introducao">
+                Os ecossistemas mesozoicos possuíam complexas relações
+                entre produtores, herbívoros e predadores.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>🌱 Produtores</h3>
+
+                    <p>
+                        Plantas e outros organismos fotossintéticos
+                        formavam a base de muitos ecossistemas.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🦕 Herbívoros</h3>
+
+                    <p>
+                        Muitos dinossauros alimentavam-se de plantas
+                        e ocupavam diferentes nichos ecológicos.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🦖 Predadores</h3>
+
+                    <p>
+                        Terópodes e outros animais predadores
+                        ocupavam posições superiores em diversas
+                        cadeias alimentares.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🦅 Necrófagos</h3>
+
+                    <p>
+                        Diversos organismos também aproveitavam
+                        restos de animais mortos, contribuindo
+                        para a reciclagem de matéria nos ecossistemas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TAMANHOS
+        ====================================== -->
+
+        <section id="tamanhos">
+
+            <h2 class="titulo-secao">
+                Os gigantes do Mesozoico
+            </h2>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>🦕 Saurópodes gigantes</h3>
+
+                    <p>
+                        Alguns saurópodes atingiram tamanhos
+                        extraordinários, tornando-se alguns dos
+                        maiores animais terrestres conhecidos.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🦖 Grandes predadores</h3>
+
+                    <p>
+                        Alguns terópodes atingiram vários metros
+                        de comprimento e desenvolveram adaptações
+                        especializadas para a predação.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🌊 Gigantes marinhos</h3>
+
+                    <p>
+                        Os oceanos também abrigaram répteis
+                        marinhos de grandes dimensões.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🪽 Grandes voadores</h3>
+
+                    <p>
+                        Alguns pterossauros desenvolveram enormes
+                        envergaduras e estão entre os maiores
+                        animais voadores conhecidos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MITOS
+        ====================================== -->
+
+        <section id="mitos">
+
+            <h2 class="titulo-secao">
+                Mitos e fatos
+            </h2>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>❌ "Humanos viveram com dinossauros"</h3>
+
+                    <p>
+                        Humanos modernos não viveram junto dos
+                        dinossauros não avianos. Os primeiros
+                        Homo sapiens surgiram milhões de anos
+                        depois da extinção do final do Cretáceo.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>❌ "Todos os dinossauros eram gigantes"</h3>
+
+                    <p>
+                        Existiam dinossauros de muitos tamanhos,
+                        incluindo espécies pequenas.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>❌ "Pterossauros eram dinossauros"</h3>
+
+                    <p>
+                        Pterossauros eram répteis voadores parentes
+                        próximos dos dinossauros, mas pertenciam
+                        a um grupo diferente.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>✅ "As aves são dinossauros"</h3>
+
+                    <p>
+                        As aves pertencem à linhagem dos dinossauros
+                        terópodes e são consideradas os únicos
+                        dinossauros viventes atualmente.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             QUIZ
+        ====================================== -->
+
+        <section id="quiz">
+
+            <h2 class="titulo-secao">
+                🧠 Quiz da Era Mesozoica
+            </h2>
+
+            <div class="card">
+
+                <h3>
+                    1. Qual foi o último período da Era Mesozoica?
+                </h3>
+
+                <br>
+
+                <button class="resposta" onclick="verificar(this, false)">
+                    A) Triássico
+                </button>
+
+                <button class="resposta" onclick="verificar(this, false)">
+                    B) Jurássico
+                </button>
+
+                <button class="resposta" onclick="verificar(this, true)">
+                    C) Cretáceo
+                </button>
+
+                <button class="resposta" onclick="verificar(this, false)">
+                    D) Permiano
+                </button>
+
+                <p id="resultadoQuiz"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FATOS RÁPIDOS
+        ====================================== -->
+
+        <section id="fatos">
+
+            <h2 class="titulo-secao">
+                ⚡ Fatos rápidos
+            </h2>
+
+            <ul class="lista">
+
+                <li>
+                    <strong>252 milhões:</strong>
+                    aproximadamente quando começou o Mesozoico.
+                </li>
+
+                <li>
+                    <strong>66 milhões:</strong>
+                    aproximadamente quando terminou o Mesozoico.
+                </li>
+
+                <li>
+                    <strong>3 períodos:</strong>
+                    Triássico, Jurássico e Cretáceo.
+                </li>
+
+                <li>
+                    <strong>Pangeia:</strong>
+                    começou a se fragmentar durante o Mesozoico.
+                </li>
+
+                <li>
+                    <strong>Aves:</strong>
+                    são descendentes de dinossauros terópodes.
+                </li>
+
+                <li>
+                    <strong>Extinção:</strong>
+                    o evento do final do Cretáceo eliminou
+                    os dinossauros não avianos.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <style>
+
+            /* BOTÕES DO QUIZ */
+
+            .resposta {
+                display: block;
+
+                width: 100%;
+
+                margin: 10px 0;
+
+                padding: 13px 16px;
+
+                border: 1px solid var(--borda);
+
+                border-radius: 9px;
+
+                background: var(--fundo-secundario);
+
+                color: var(--texto);
+
+                cursor: pointer;
+
+                text-align: left;
+
+                transition: 0.2s;
+            }
+
+            .resposta:hover {
+                background: var(--verde);
+                color: white;
+                transform: translateX(5px);
+            }
+
+            #resultadoQuiz {
+                margin-top: 20px;
+
+                font-weight: bold;
+
+                color: var(--verde);
+            }
+
+        </style>
+
+        <script>
+
+            /* =====================================
+               QUIZ
+            ====================================== */
+
+            function verificar(botao, correta) {
+
+                const resultado =
+                    document.getElementById("resultadoQuiz");
+
+                if (correta) {
+
+                    resultado.textContent =
+                        "✅ Correto! O Cretáceo foi o último período da Era Mesozoica.";
+
+                    resultado.style.color = "#55c878";
+
+                } else {
+
+                    resultado.textContent =
+                        "❌ Não foi dessa vez. Tente novamente!";
+
+                    resultado.style.color = "#e85d5d";
+
+                }
+
+            }
+
+        </script>
+
+        <!-- =====================================
+             ENCERRAMENTO
+        ====================================== -->
+
+        <section id="encerramento">
+
+            <h2 class="titulo-secao">
+                🌎 O legado da Era Mesozoica
+            </h2>
+
+            <div class="destaque">
+
+                <h3>🦖 Uma história que ainda continua</h3>
+
+                <p>
+                    A Era Mesozoica terminou há cerca de 66 milhões
+                    de anos, mas seu legado permanece presente.
+                    As rochas, fósseis e organismos que sobreviveram
+                    permitem reconstruir parte da história desse
+                    extraordinário capítulo da evolução da vida.
+                </p>
+
+                <br>
+
+                <p>
+                    Os dinossauros não desapareceram completamente:
+                    as aves representam uma linhagem de dinossauros
+                    que sobreviveu até os dias atuais.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             IMPORTÂNCIA CIENTÍFICA
+        ====================================== -->
+
+        <section>
+
+            <h2 class="titulo-secao">
+                🔬 Por que estudar o Mesozoico?
+            </h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🧬 Evolução</h3>
+
+                    <p>
+                        O estudo dos fósseis ajuda os cientistas
+                        a compreender como diferentes grupos de
+                        organismos surgiram e se diversificaram.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌎 Geologia</h3>
+
+                    <p>
+                        As rochas mesozoicas ajudam a entender
+                        mudanças nos continentes, oceanos e
+                        ambientes da Terra.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌡️ Clima</h3>
+
+                    <p>
+                        O registro geológico permite investigar
+                        antigas mudanças climáticas e ambientais.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔎 Paleontologia</h3>
+
+                    <p>
+                        Fósseis preservados em diferentes partes
+                        do mundo fornecem evidências sobre a vida
+                        de milhões de anos atrás.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
