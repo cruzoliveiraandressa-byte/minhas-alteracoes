@@ -80,7 +80,7 @@
 <body>
 
   <div class="container">
-    <h1>Meu site</h1>
+    
 
     <button 
       class="theme-button" 
@@ -96,6 +96,1642 @@
       document.body.classList.toggle("dark");
     });
   </script>
+
+</body>
+</html>
+
+      <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Vampire Diaries | Universo Sobrenatural</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #09090d;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           VARIÁVEIS
+        ========================= */
+
+        :root {
+            --red: #9d1111;
+            --red-light: #d92929;
+            --black: #09090d;
+            --dark: #111118;
+            --dark-2: #171720;
+            --gray: #aaa;
+            --white: #ffffff;
+            --gold: #c9a45c;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(5, 5, 10, 0.95)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #4a0808 0%,
+                    #160508 35%,
+                    #09090d 75%
+                );
+        }
+
+        nav {
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+            z-index: 10;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--red-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--red-light);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero small {
+            color: var(--red-light);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 10vw, 125px);
+            line-height: 0.95;
+            margin: 20px 0;
+            text-shadow: 0 10px 40px #000;
+        }
+
+        .hero h1 span {
+            color: var(--red-light);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 25px;
+            border-radius: 4px;
+            border: 1px solid var(--red-light);
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .button.primary {
+            background: var(--red);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: var(--red-light);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--red-light);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        #sobre {
+            background: #0d0d13;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            padding: 30px;
+            border-left: 4px solid var(--red);
+            background: #14141c;
+            font-family: Georgia, serif;
+            font-size: 21px;
+            font-style: italic;
+            color: #eee;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(217,41,41,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-number {
+            color: var(--red-light);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-family: Georgia, serif;
+            font-size: 25px;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* =========================
+           PERSONAGENS
+        ========================= */
+
+        #personagens {
+            background: #09090d;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .character {
+            min-height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.95),
+                    rgba(0,0,0,0.1)
+                ),
+                linear-gradient(
+                    135deg,
+                    #3a0b0b,
+                    #111118
+                );
+
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .character:hover {
+            transform: scale(1.02);
+        }
+
+        .character-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .character h3 {
+            font-family: Georgia, serif;
+            font-size: 27px;
+        }
+
+        .character span {
+            color: var(--red-light);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .character p {
+            color: #bbb;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           TEMPORADAS
+        ========================= */
+
+        #temporadas {
+            background: #111118;
+        }
+
+        .season-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .season {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+
+            padding: 25px;
+            background: #171720;
+            border-radius: 6px;
+
+            border-left: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .season:hover {
+            border-left-color: var(--red-light);
+            transform: translateX(5px);
+        }
+
+        .season-number {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            color: var(--red-light);
+        }
+
+        .season h3 {
+            margin-bottom: 5px;
+            font-family: Georgia, serif;
+        }
+
+        .season p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           MITOLOGIA
+        ========================= */
+
+        #mitologia {
+            background:
+                linear-gradient(
+                    rgba(8,8,12,0.92),
+                    rgba(8,8,12,0.98)
+                );
+        }
+
+        .mythology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .myth {
+            padding: 35px;
+            background: #121219;
+            border: 1px solid #24242e;
+            border-radius: 8px;
+        }
+
+        .myth h3 {
+            font-family: Georgia, serif;
+            color: #fff;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .myth p {
+            color: #aaa;
+        }
+
+        /* =========================
+           RELAÇÕES
+        ========================= */
+
+        #relacoes {
+            background: #0d0d13;
+        }
+
+        .relationship {
+            padding: 25px 0;
+            border-bottom: 1px solid #282831;
+        }
+
+        .relationship:last-child {
+            border-bottom: none;
+        }
+
+        .relationship h3 {
+            color: var(--red-light);
+            font-family: Georgia, serif;
+            font-size: 24px;
+        }
+
+        .relationship p {
+            color: #aaa;
+            max-width: 900px;
+        }
+
+        /* =========================
+           CURIOSIDADES
+        ========================= */
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .fact {
+            background: #171720;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .fact strong {
+            display: block;
+            font-size: 35px;
+            color: var(--red-light);
+            font-family: Georgia, serif;
+        }
+
+        .fact p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           GALERIA VISUAL
+        ========================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 220px;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #671111,
+                    #191018 50%,
+                    #08080c
+                );
+        }
+
+        .gallery-item:nth-child(2) {
+            background:
+                radial-gradient(
+                    circle at 70% 30%,
+                    #a01515,
+                    #1a0c0f 45%,
+                    #07070b
+                );
+        }
+
+        .gallery-item:nth-child(3) {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #342b19,
+                    #141116 50%,
+                    #07070b
+                );
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #350909,
+                    #111118
+                );
+        }
+
+        .gallery-item div {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+
+        .gallery-item h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+        }
+
+        /* =========================
+           FRASE
+        ========================= */
+
+        .quote-section {
+            text-align: center;
+            padding: 120px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(30,0,0,0.7),
+                    rgba(8,8,12,0.95)
+                );
+        }
+
+        .quote-section h2 {
+            max-width: 850px;
+            margin: auto;
+
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 5vw, 55px);
+        }
+
+        .quote-section p {
+            margin-top: 20px;
+            color: var(--red-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050507;
+            padding: 60px 7% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #22222a;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #777;
+            max-width: 500px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            color: #888;
+            margin: 8px 0;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+            padding-top: 30px;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .character-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards,
+            .facts {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .cards,
+            .facts,
+            .character-grid,
+            .season-list,
+            .mythology-grid,
+            .gallery,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:nth-child(4) {
+                grid-column: span 1;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .season {
+                grid-template-columns: 60px 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header id="inicio">
+
+        <nav>
+            <div class="logo">
+                TVD<span>.</span>
+            </div>
+
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#temporadas">Temporadas</a></li>
+                <li><a href="#mitologia">Mitologia</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <small>Welcome to Mystic Falls</small>
+
+                <h1>
+                    The Vampire
+                    <span>Diaries</span>
+                </h1>
+
+                <p>
+                    Uma jornada de amor, amizade, escolhas, sacrifícios
+                    e criaturas sobrenaturais que transformaram Mystic
+                    Falls em um dos lugares mais conhecidos da televisão.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#sobre" class="button primary">
+                        Explorar o universo
+                    </a>
+
+                    <a href="#personagens" class="button">
+                        Conhecer personagens
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         SOBRE
+    ========================== -->
+
+    <section id="sobre">
+
+        <div class="section-title">
+            <span>O começo da história</span>
+            <h2>Sobre The Vampire Diaries</h2>
+
+            <p>
+                Uma série que combina fantasia, drama, romance,
+                suspense e elementos sobrenaturais.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    The Vampire Diaries é uma série de televisão
+                    baseada nos livros de mesmo nome escritos por
+                    L. J. Smith. A história acompanha principalmente
+                    Elena Gilbert e os irmãos Stefan e Damon Salvatore.
+                </p>
+
+                <p>
+                    O enredo se passa principalmente em Mystic Falls,
+                    uma pequena cidade fictícia marcada por acontecimentos
+                    sobrenaturais e por uma história antiga envolvendo
+                    vampiros, bruxas, lobisomens e outras criaturas.
+                </p>
+
+                <p>
+                    Ao longo da narrativa, os personagens enfrentam
+                    conflitos relacionados ao passado, à família,
+                    ao amor, à imortalidade e às consequências de suas
+                    próprias escolhas.
+                </p>
+
+            </div>
+
+            <div class="quote">
+                "Em Mystic Falls, o passado nunca está realmente morto."
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ELEMENTOS DA SÉRIE
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+            <span>O universo</span>
+            <h2>O que torna a série especial?</h2>
+
+            <p>
+                A história combina diversos elementos que criam
+                uma narrativa cheia de conflitos e reviravoltas.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <article class="card">
+                <span class="card-number">01</span>
+                <h3>Romance</h3>
+
+                <p>
+                    Relacionamentos são uma parte central da narrativa.
+                    Os personagens precisam lidar com sentimentos,
+                    perdas, escolhas e consequências.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-number">02</span>
+                <h3>Vampiros</h3>
+
+                <p>
+                    Os vampiros possuem diferentes habilidades,
+                    limitações e histórias. A imortalidade é apresentada
+                    tanto como poder quanto como maldição.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-number">03</span>
+                <h3>Família</h3>
+
+                <p>
+                    A série explora profundamente os vínculos familiares,
+                    principalmente através dos irmãos Salvatore e de
+                    diversas famílias antigas.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-number">04</span>
+                <h3>Bruxaria</h3>
+
+                <p>
+                    A magia tem papel importante no universo da série,
+                    com bruxas capazes de realizar feitiços e alterar
+                    o equilíbrio sobrenatural.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-number">05</span>
+                <h3>Mistério</h3>
+
+                <p>
+                    Segredos do passado frequentemente retornam,
+                    fazendo com que os personagens descubram novas
+                    informações sobre Mystic Falls.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-number">06</span>
+                <h3>Sacrifício</h3>
+
+                <p>
+                    Muitos personagens precisam tomar decisões difíceis
+                    para proteger as pessoas que amam.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PERSONAGENS
+    ========================== -->
+
+    <section id="personagens">
+
+        <div class="section-title">
+            <span>Principais personagens</span>
+            <h2>Habitantes de Mystic Falls</h2>
+
+            <p>
+                Personagens que marcaram a história da série e
+                ajudaram a construir seu universo.
+            </p>
+        </div>
+
+        <div class="character-grid">
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Personagem</span>
+
+                    <h3>Elena Gilbert</h3>
+
+                    <p>
+                        Uma jovem cuja vida muda completamente
+                        depois que ela descobre a existência
+                        do mundo sobrenatural.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Vampiro</span>
+
+                    <h3>Stefan Salvatore</h3>
+
+                    <p>
+                        Um vampiro que tenta viver de acordo com
+                        seus próprios princípios enquanto enfrenta
+                        os fantasmas do passado.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Vampiro</span>
+
+                    <h3>Damon Salvatore</h3>
+
+                    <p>
+                        Conhecido por sua personalidade provocadora,
+                        Damon possui uma relação complexa com o irmão
+                        Stefan e com aqueles que ama.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Bruxa</span>
+
+                    <h3>Bonnie Bennett</h3>
+
+                    <p>
+                        Uma poderosa bruxa que frequentemente coloca
+                        sua própria segurança em risco para ajudar
+                        seus amigos.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Humana</span>
+
+                    <h3>Caroline Forbes</h3>
+
+                    <p>
+                        Uma personagem que passa por uma grande
+                        transformação ao longo da série.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Lobisomem</span>
+
+                    <h3>Tyler Lockwood</h3>
+
+                    <p>
+                        Um personagem ligado à história sobrenatural
+                        de sua família e à transformação em lobisomem.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Humano</span>
+
+                    <h3>Matt Donovan</h3>
+
+                    <p>
+                        Um dos personagens humanos que permanece
+                        ligado ao grupo enquanto acontecimentos
+                        sobrenaturais se intensificam.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="character">
+
+                <div class="character-content">
+                    <span>Vampira</span>
+
+                    <h3>Katherine Pierce</h3>
+
+                    <p>
+                        Uma personagem conhecida por sua personalidade
+                        estratégica, ambiciosa e imprevisível.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TEMPORADAS
+    ========================== -->
+
+    <section id="temporadas">
+
+        <div class="section-title">
+
+            <span>História</span>
+
+            <h2>As oito temporadas</h2>
+
+            <p>
+                A narrativa evolui continuamente, apresentando
+                novos personagens, ameaças e conflitos.
+            </p>
+
+        </div>
+
+
+        <div class="season-list">
+
+            <article class="season">
+                <div class="season-number">01</div>
+
+                <div>
+                    <h3>Temporada 1</h3>
+
+                    <p>
+                        Elena conhece Stefan Salvatore e descobre
+                        que ele é um vampiro. A chegada de Damon
+                        muda completamente a dinâmica da cidade.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">02</div>
+
+                <div>
+                    <h3>Temporada 2</h3>
+
+                    <p>
+                        Novas ameaças surgem e antigos segredos
+                        relacionados ao passado dos personagens
+                        começam a aparecer.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">03</div>
+
+                <div>
+                    <h3>Temporada 3</h3>
+
+                    <p>
+                        O universo sobrenatural se expande com
+                        novos vampiros e histórias ligadas à
+                        origem de determinadas famílias.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">04</div>
+
+                <div>
+                    <h3>Temporada 4</h3>
+
+                    <p>
+                        Transformações importantes mudam a vida
+                        dos personagens e novas questões sobre
+                        humanidade e imortalidade são exploradas.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">05</div>
+
+                <div>
+                    <h3>Temporada 5</h3>
+
+                    <p>
+                        Os acontecimentos se tornam ainda mais
+                        intensos enquanto os personagens enfrentam
+                        novas ameaças sobrenaturais.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">06</div>
+
+                <div>
+                    <h3>Temporada 6</h3>
+
+                    <p>
+                        A história aborda perdas, memórias,
+                        amizade e as consequências das escolhas
+                        feitas anteriormente.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">07</div>
+
+                <div>
+                    <h3>Temporada 7</h3>
+
+                    <p>
+                        O grupo enfrenta uma nova fase da história
+                        e precisa lidar com diferentes ameaças
+                        enquanto tenta proteger Mystic Falls.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="season">
+                <div class="season-number">08</div>
+
+                <div>
+                    <h3>Temporada 8</h3>
+
+                    <p>
+                        A história chega ao seu capítulo final,
+                        encerrando diversos arcos e dando um
+                        desfecho aos personagens principais.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MITOLOGIA
+    ========================== -->
+
+    <section id="mitologia">
+
+        <div class="section-title">
+
+            <span>Seres sobrenaturais</span>
+
+            <h2>Mitologia de Mystic Falls</h2>
+
+            <p>
+                O universo da série apresenta diferentes espécies
+                e formas de magia.
+            </p>
+
+        </div>
+
+
+        <div class="mythology-grid">
+
+            <article class="myth">
+
+                <h3>🧛 Vampiros</h3>
+
+                <p>
+                    Criaturas imortais que possuem força, velocidade
+                    e sentidos superiores aos humanos. Suas histórias
+                    estão profundamente conectadas ao passado da cidade.
+                </p>
+
+            </article>
+
+
+            <article class="myth">
+
+                <h3>🧙 Bruxas</h3>
+
+                <p>
+                    Pessoas capazes de manipular forças mágicas.
+                    As bruxas possuem papel fundamental no equilíbrio
+                    entre os diferentes seres sobrenaturais.
+                </p>
+
+            </article>
+
+
+            <article class="myth">
+
+                <h3>🐺 Lobisomens</h3>
+
+                <p>
+                    Pessoas que carregam uma maldição sobrenatural
+                    ligada à transformação em lobisomem e à história
+                    de determinadas famílias.
+                </p>
+
+            </article>
+
+
+            <article class="myth">
+
+                <h3>⚰️ Originais</h3>
+
+                <p>
+                    Os vampiros originais ocupam uma posição especial
+                    dentro da mitologia da série e possuem uma ligação
+                    direta com a origem dos vampiros.
+                </p>
+
+            </article>
+
+
+            <article class="myth">
+
+                <h3>👻 Espíritos</h3>
+
+                <p>
+                    O universo da série também apresenta diferentes
+                    manifestações sobrenaturais relacionadas à morte
+                    e ao mundo espiritual.
+                </p>
+
+            </article>
+
+
+            <article class="myth">
+
+                <h3>🔮 Magia</h3>
+
+                <p>
+                    Feitiços, objetos mágicos e rituais são utilizados
+                    em diferentes momentos da história, muitas vezes
+                    alterando completamente o destino dos personagens.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RELAÇÕES
+    ========================== -->
+
+    <section id="relacoes">
+
+        <div class="section-title">
+
+            <span>Laços</span>
+
+            <h2>Relações importantes</h2>
+
+            <p>
+                As relações entre os personagens são uma das bases
+                emocionais da narrativa.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="relationship">
+
+                <h3>Elena & Stefan</h3>
+
+                <p>
+                    O relacionamento entre Elena e Stefan representa
+                    uma das principais histórias românticas da série,
+                    sendo marcado por sentimentos fortes e diversos
+                    obstáculos.
+                </p>
+
+            </div>
+
+
+            <div class="relationship">
+
+                <h3>Elena & Damon</h3>
+
+                <p>
+                    A relação entre Elena e Damon evolui ao longo da
+                    narrativa e é marcada por conflitos, atração,
+                    confiança e escolhas difíceis.
+                </p>
+
+            </div>
+
+
+            <div class="relationship">
+
+                <h3>Stefan & Damon</h3>
+
+                <p>
+                    A relação entre os irmãos Salvatore é complexa.
+                    Apesar das diferenças, os dois compartilham uma
+                    ligação profunda construída durante muitos anos.
+                </p>
+
+            </div>
+
+
+            <div class="relationship">
+
+                <h3>Bonnie & Elena</h3>
+
+                <p>
+                    A amizade entre Bonnie e Elena demonstra a
+                    importância da lealdade e da confiança em meio
+                    aos acontecimentos sobrenaturais.
+                </p>
+
+            </div>
+
+
+            <div class="relationship">
+
+                <h3>Caroline & Bonnie</h3>
+
+                <p>
+                    A amizade das duas personagens se fortalece
+                    durante os momentos mais difíceis da história.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CURIOSIDADES
+    ========================== -->
+
+    <section id="curiosidades">
+
+        <div class="section-title">
+
+            <span>Você sabia?</span>
+
+            <h2>Curiosidades</h2>
+
+            <p>
+                Alguns detalhes interessantes sobre a série e
+                seu universo.
+            </p>
+
+        </div>
+
+
+        <div class="facts">
+
+            <article class="fact">
+
+                <strong>8</strong>
+
+                <p>
+                    Temporadas compõem a série principal.
+                </p>
+
+            </article>
+
+
+            <article class="fact">
+
+                <strong>171</strong>
+
+                <p>
+                    Episódios foram produzidos ao longo da série.
+                </p>
+
+            </article>
+
+
+            <article class="fact">
+
+                <strong>2009</strong>
+
+                <p>
+                    Ano em que a série estreou na televisão.
+                </p>
+
+            </article>
+
+
+            <article class="fact">
+
+                <strong>2017</strong>
+
+                <p>
+                    Ano em que a série principal chegou ao fim.
+                </p>
+
+            </article>
+
+
+            <article class="fact">
+
+                <strong>3</strong>
+
+                <p>
+                    Séries fazem parte do universo televisivo
+                    relacionado a The Vampire Diaries.
+                </p>
+
+            </article>
+
+
+            <article class="fact">
+
+                <strong>∞</strong>
+
+                <p>
+                    Histórias, relações e personagens que continuam
+                    sendo lembrados pelos fãs.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERIA
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>Atmosfera</span>
+
+            <h2>Uma viagem por Mystic Falls</h2>
+
+            <p>
+                Uma representação visual criada com CSS para
+                transmitir a atmosfera sombria da série.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+
+                <div>
+                    <h3>Mystic Falls</h3>
+                    <p>A cidade onde tudo começa.</p>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <div>
+                    <h3>A noite</h3>
+                    <p>Quando o sobrenatural ganha força.</p>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <div>
+                    <h3>O passado</h3>
+                    <p>Histórias antigas continuam presentes.</p>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <div>
+                    <h3>Amor e sacrifício</h3>
+                    <p>
+                        Escolhas que podem mudar completamente
+                        o destino dos personagens.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE FINAL
+    ========================== -->
+
+    <section class="quote-section">
+
+        <h2>
+            Algumas histórias terminam.
+            Outras continuam vivendo na memória.
+        </h2>
+
+        <p>
+            The Vampire Diaries
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>The Vampire Diaries</h3>
+
+                <p>
+                    Página temática criada em HTML e CSS para
+                    apresentar informações sobre o universo,
+                    personagens, temporadas e mitologia de
+                    The Vampire Diaries.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#personagens">Personagens</a></li>
+                    <li><a href="#temporadas">Temporadas</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Universo</h3>
+
+                <ul>
+                    <li>Vampiros</li>
+                    <li>Bruxas</li>
+                    <li>Lobisomens</li>
+                    <li>Mystic Falls</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
